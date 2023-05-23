@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,10 +21,10 @@ class _ApplicationPageState extends State<ApplicationPage> {
           color: AppColors.primaryBackground,
           child: SafeArea(
             child: Scaffold(
-              body: buildHomePage(state.index),
+              body: buildApplicationPage(state.index),
               bottomNavigationBar: Container(
                 width: 375.w,
-                height: 58.h,
+                height: 60.h,
                 decoration: BoxDecoration(
                   color: AppColors.primaryElement,
                   borderRadius: BorderRadius.only(

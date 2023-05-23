@@ -1,14 +1,13 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '/global.dart';
-import '/app/application/application.dart';
 import '/common/common.dart';
 import '/app/signup/signup.dart';
 import '/app/signin/signin.dart';
 import '/app/welcome/welcome.dart';
+import '/app/application/application.dart';
 
 class AppPages {
   static List<PageEntity> routes() {
@@ -52,10 +51,8 @@ class AppPages {
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
         // print('Valid route name ${settings.name}');
-        // print('First log');
         bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
         if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
-          // print('Second log');
           bool isLoggedIn = Global.storageService.getIsLoggedIn();
           if (isLoggedIn) {
             return MaterialPageRoute(
@@ -68,8 +65,9 @@ class AppPages {
             builder: (_) => result.first.page, settings: settings);
       }
     }
-
-    print('Invalid route name ${settings.name}');
+    if (kDebugMode) {
+      print('Invalid route name ${settings.name}');
+    }
     return MaterialPageRoute(
         builder: (_) => const SignInPage(), settings: settings);
   }

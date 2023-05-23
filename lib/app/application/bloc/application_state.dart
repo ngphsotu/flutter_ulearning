@@ -6,6 +6,6 @@ class ApplicationState {
   const ApplicationState({this.index = 0});
 }
 
-class HomeInitial extends ApplicationState {
-  HomeInitial({required super.index});
+class AppInitial extends ApplicationState {
+  AppInitial({required super.index});
 }

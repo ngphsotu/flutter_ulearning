@@ -1,6 +1,5 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,12 +10,11 @@ Column formSignUp(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      SizedBox(height: 15.h),
-      Center(
-        child: reusableText('Enter your details below & free sign up'),
-      ),
+      SizedBox(height: 25.h),
+      const Center(
+          child: ReusableText(text: 'Enter your details below & free sign up')),
       Container(
-        margin: EdgeInsets.only(top: 50.h),
+        margin: EdgeInsets.only(top: 100.h),
         padding: EdgeInsets.only(left: 25.w, right: 25.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +33,7 @@ Column formSignUp(BuildContext context) {
             ReusableTextFormField(
               hintText: 'Enter your email',
               labelText: 'Email',
-              prefixIcon: const Icon(Icons.person, color: Colors.black),
+              prefixIcon: const Icon(Icons.email, color: Colors.black),
               autocorrect: false,
               keyboardType: TextInputType.multiline,
               onChanged: (value) {
@@ -68,9 +66,10 @@ Column formSignUp(BuildContext context) {
                     .add(RePasswordEvent(repassword: value));
               },
             ),
-            SizedBox(height: 10.h),
-            reusableText(
-                'By creating an account you have to agree with out them & condication.'),
+            SizedBox(height: 25.h),
+            const ReusableText(
+                text:
+                    'By creating an account you have to agree with out them & condication.'),
             Container(
               width: 325.w,
               height: 40.h,
@@ -79,7 +78,9 @@ Column formSignUp(BuildContext context) {
                 buttonName: 'Signup',
                 backgroundColor: AppColors.primaryElement,
                 onPressed: () {
-                  print('Press Signup Button');
+                  if (kDebugMode) {
+                    print('Press Signup Button');
+                  }
                   SignUpController(context: context).handleEmailSignUp();
                 },
               ),

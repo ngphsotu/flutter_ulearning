@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../signup.dart';
 import '/common/common.dart';
+import '../../signin/signin.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -21,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: SafeArea(
             child: Scaffold(
               backgroundColor: AppColors.primaryBackground,
-              appBar: buildAppBar('Sign Up'),
+              appBar: buildSignInUpAppBar('Sign Up'),
               body: SingleChildScrollView(
                 child: formSignUp(context),
               ),

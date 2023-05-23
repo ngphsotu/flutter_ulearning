@@ -1,10 +1,8 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '/common/common.dart';
 import '/app/welcome/welcome.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -33,7 +31,9 @@ class _WelcomePageState extends State<WelcomePage> {
                     onPageChanged: (index) {
                       state.page = index;
                       BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvent());
-                      print('Index value is $index');
+                      if (kDebugMode) {
+                        print('Index value is $index');
+                      }
                     },
                     children: [
                       buildWelcomePage(

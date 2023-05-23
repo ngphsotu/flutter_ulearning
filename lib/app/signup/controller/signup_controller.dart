@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_print, use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -22,29 +23,36 @@ class SignUpController {
     String repassword = state.repassword;
 
     if (username.isEmpty) {
-      print('Username can not be empty - (handleEmailSignUp)');
+      if (kDebugMode) {
+        print('Username can not be empty - (handleEmailSignUp)');
+      }
       toastInfo(msg: 'Username can not be empty');
       return;
     }
 
     if (email.isEmpty) {
-      print('Email can not be empty - (handleEmailSignUp)');
+      if (kDebugMode) {
+        print('Email can not be empty - (handleEmailSignUp)');
+      }
       toastInfo(msg: 'Email can not be empty');
       return;
     }
 
     if (password.isEmpty) {
-      print('Password can not be empty - (handleEmailSignUp)');
+      if (kDebugMode) {
+        print('Password can not be empty - (handleEmailSignUp)');
+      }
       toastInfo(msg: 'Password can not be empty');
       return;
     }
 
     if (repassword.isEmpty) {
-      print('Your password confirmation is wrong - (handleEmailSignUp)');
+      if (kDebugMode) {
+        print('Your password confirmation is wrong - (handleEmailSignUp)');
+      }
       toastInfo(msg: 'Your password confirmation is wrong');
       return;
     }
-
     try {
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
@@ -59,13 +67,19 @@ class SignUpController {
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak - (handleEmailSignUp)');
+        if (kDebugMode) {
+          print('The password provided is too weak - (handleEmailSignUp)');
+        }
         toastInfo(msg: 'The password provided is too weak');
       } else if (e.code == 'email-already-in-use') {
-        print('The email is already in use - (handleEmailSignUp)');
+        if (kDebugMode) {
+          print('The email is already in use - (handleEmailSignUp)');
+        }
         toastInfo(msg: 'The email is already in use');
       } else if (e.code == 'invalid-email') {
-        print('Your email id is invalid - (handleEmailSignUp)');
+        if (kDebugMode) {
+          print('Your email id is invalid - (handleEmailSignUp)');
+        }
         toastInfo(msg: 'Your email id is invalid');
       }
     }

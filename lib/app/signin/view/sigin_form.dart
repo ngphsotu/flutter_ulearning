@@ -1,6 +1,5 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,11 +11,10 @@ Column formSignIn(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       buildThirdPartyLogin(context),
-      Center(
-        child: reusableText('Or use your email account to login'),
-      ),
+      const Center(
+          child: ReusableText(text: 'Or use your email account to login')),
       Container(
-        margin: EdgeInsets.only(top: 25.h),
+        margin: EdgeInsets.only(top: 100.h),
         padding: EdgeInsets.only(left: 25.w, right: 25.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -31,7 +29,7 @@ Column formSignIn(BuildContext context) {
                 context.read<SignInBloc>().add(EmailEvent(email: value));
               },
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 25.h),
             ReusableTextFormField(
               hintText: 'Enter your password',
               labelText: 'Password',
@@ -53,27 +51,32 @@ Column formSignIn(BuildContext context) {
                 buttonName: 'Login',
                 backgroundColor: AppColors.primaryElement,
                 onPressed: () {
-                  print('Press Login Button');
+                  if (kDebugMode) {
+                    print('Press Login Button');
+                  }
                   SignInController(context: context).handleEmailSignIn('email');
                   // Navigator.of(context)
                   //     .pushNamedAndRemoveUntil('/homePage', (route) => false);
                 },
               ),
             ),
-            Center(child: reusableText('or')),
+            // Center(child: reusableText('or')),
+            const Center(
+                child: ReusableText(text: 'or', fontStyle: FontStyle.italic)),
             Container(
               width: 325.w,
               height: 40.h,
               margin: EdgeInsets.only(left: 75.w, right: 75.w),
               child: ReusableButton(
-                side: const BorderSide(
-                  color: AppColors.primaryThirdElementText,
-                ),
+                side:
+                    const BorderSide(color: AppColors.primaryThirdElementText),
                 textColor: AppColors.primaryText,
                 buttonName: 'Sign Up',
                 backgroundColor: AppColors.primaryBackground,
                 onPressed: () {
-                  print('Press Signup Button');
+                  if (kDebugMode) {
+                    print('Press Signup Button');
+                  }
                   Navigator.of(context).pushNamed('/signUp');
                   // SignUpController(context: context).handleEmailSignUp();
                   // Navigator.of(context).pushNamedAndRemoveUntil(
