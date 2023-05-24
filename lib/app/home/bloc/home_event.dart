@@ -1,3 +1,11 @@
 part of 'home_bloc.dart';
 
-abstract class HomeEvent {}
+class HomeEvent {
+  const HomeEvent();
+}
+
+class HomeDots extends HomeEvent {
+  final int index;
+
+  HomeDots(this.index);
+}

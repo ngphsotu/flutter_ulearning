@@ -6,7 +6,7 @@ part 'application_state.dart';
 
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   ApplicationBloc() : super(const ApplicationState()) {
-    // on<HomeEvent>((event, emit) {});
+    on<ApplicationEvent>((event, emit) {});
     on<TriggerApplicationEvent>((event, emit) {
       emit(ApplicationState(index: event.index));
       if (kDebugMode) {

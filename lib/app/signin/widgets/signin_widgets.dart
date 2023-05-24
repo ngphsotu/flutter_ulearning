@@ -77,10 +77,11 @@ Widget forgotPassword() {
         print('Press Forgot password Text');
       }
     },
-    child: const ReusableText(
+    child: ReusableText(
       text: 'Forgot password ?',
       color: AppColors.primaryText,
       fontStyle: FontStyle.italic,
+      fontSize: 14.sp,
       decoration: TextDecoration.underline,
       decorationColor: AppColors.primarySecondaryElementText,
     ),

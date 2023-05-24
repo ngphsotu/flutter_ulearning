@@ -90,10 +90,10 @@ Widget buildWelcomePage(
   );
 }
 
-// * Build Dots
-DotsIndicator buildDots(WelcomeState state) {
+// * Build Dots Welcome Page
+Widget buildDots(WelcomeState state) {
   return DotsIndicator(
-    position: state.page.toDouble(),
+    position: state.page,
     dotsCount: 3,
     mainAxisAlignment: MainAxisAlignment.center,
     decorator: DotsDecorator(

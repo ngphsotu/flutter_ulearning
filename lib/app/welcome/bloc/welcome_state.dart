@@ -3,7 +3,9 @@ part of 'welcome_bloc.dart';
 class WelcomeState {
   int page;
 
-  WelcomeState({this.page = 0});
+  WelcomeState({required this.page});
 }
 
-class WelcomeInitial extends WelcomeState {}
+class WelcomeInitial extends WelcomeState {
+  WelcomeInitial({super.page = 0});
+}

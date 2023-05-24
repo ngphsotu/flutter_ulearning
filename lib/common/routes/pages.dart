@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '/global.dart';
 import '/common/common.dart';
+import '/app/home/home.dart';
 import '/app/signup/signup.dart';
 import '/app/signin/signin.dart';
 import '/app/welcome/welcome.dart';
@@ -31,6 +32,11 @@ class AppPages {
         route: AppRoutes.APPLICATION,
         page: const ApplicationPage(),
         bloc: BlocProvider(create: (_) => ApplicationBloc()),
+      ),
+      PageEntity(
+        route: AppRoutes.HOME,
+        page: const HomePage(),
+        bloc: BlocProvider(create: (_) => HomeBloc()),
       ),
     ];
   }

@@ -67,7 +67,7 @@ class SignInController {
             Global.storageService
                 .setString(AppConstants.STORAGE_USER_TOKEN_KEY, '12345678');
             Navigator.of(context)
-                .pushNamedAndRemoveUntil('/homePage', (route) => false);
+                .pushNamedAndRemoveUntil('/applicationPage', (route) => false);
             // * Verified user from firebase
           } else {
             if (kDebugMode) {

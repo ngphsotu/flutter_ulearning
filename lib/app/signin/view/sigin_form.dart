@@ -11,8 +11,11 @@ Column formSignIn(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       buildThirdPartyLogin(context),
-      const Center(
-          child: ReusableText(text: 'Or use your email account to login')),
+      Center(
+          child: ReusableText(
+        text: 'Or use your email account to login',
+        fontSize: 14.sp,
+      )),
       Container(
         margin: EdgeInsets.only(top: 100.h),
         padding: EdgeInsets.only(left: 25.w, right: 25.w),
@@ -60,9 +63,13 @@ Column formSignIn(BuildContext context) {
                 },
               ),
             ),
-            // Center(child: reusableText('or')),
-            const Center(
-                child: ReusableText(text: 'or', fontStyle: FontStyle.italic)),
+            Center(
+              child: ReusableText(
+                text: 'or',
+                fontSize: 14.sp,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
             Container(
               width: 325.w,
               height: 40.h,
