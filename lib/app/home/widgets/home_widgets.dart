@@ -8,8 +8,8 @@ import '/common/common.dart';
 
 // * HOME PAGE WIDGETS
 
-// * Build Home Page Appbar Widget
-AppBar buildHomeAppBar() {
+// * Build Appbar Widget in Home Page
+AppBar buildAppBar() {
   return AppBar(
     title: Container(
       margin: EdgeInsets.only(left: 7.w, right: 7.w),
@@ -18,8 +18,8 @@ AppBar buildHomeAppBar() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 15.w,
-            height: 12.h,
+            width: 25.w,
+            height: 25.h,
             child: Image.asset('assets/icons/menu.png'),
           ),
           GestureDetector(
@@ -40,7 +40,7 @@ AppBar buildHomeAppBar() {
   );
 }
 
-// * Build Home Page Text Widget
+// * Build Text Widget in Home Page
 Widget buildHomePageText(String text,
     {Color color = AppColors.primaryText, int top = 20}) {
   return Container(
@@ -53,7 +53,7 @@ Widget buildHomePageText(String text,
       ));
 }
 
-// * Build Search View
+// * Build Search View Widget in Home Page
 Widget buildSearchView() {
   return Row(
     children: [
@@ -89,7 +89,7 @@ Widget buildSearchView() {
   );
 }
 
-// * Build Sliders View
+// * Build Sliders View Widget in Home Page
 Widget buildSlidersView(context, state) {
   return Column(
     children: [
@@ -116,7 +116,7 @@ Widget buildSlidersView(context, state) {
   );
 }
 
-// * Build Sliders Container
+// * Build Sliders Container Widget in Home Page
 Widget _buildSlidersContainer(String imageName) {
   return Container(
     width: 325.w,
@@ -131,7 +131,7 @@ Widget _buildSlidersContainer(String imageName) {
   );
 }
 
-// * Build Dots Home Page
+// * Build Dots Widget in Home Page
 Widget _buildDots(HomeState state) {
   return DotsIndicator(
     position: state.index,
@@ -148,7 +148,7 @@ Widget _buildDots(HomeState state) {
   );
 }
 
-// * Build Menu View Home Page
+// * Build Menu View Widget in Home Page
 Widget buildMenuView() {
   return Column(
     children: [
@@ -218,6 +218,7 @@ Widget buildMenuView() {
   );
 }
 
+// * Build Reusable Text Widget in Home Page
 Widget _reusableText(String text,
     {int fontSize = 16,
     Color color = AppColors.primaryText,
@@ -230,6 +231,7 @@ Widget _reusableText(String text,
   );
 }
 
+// * Build Menu Text Widget in Home Page
 Widget _menuText(String menuText,
     {Color textColor = AppColors.primaryElementText,
     Color backGroundColor = AppColors.primaryElement}) {
@@ -250,7 +252,7 @@ Widget _menuText(String menuText,
   );
 }
 
-// * Build Course Grid
+// * Build Course Grid Widget in Home Page
 Widget courseGrid() {
   return Container(
     padding: EdgeInsets.all(12.w),

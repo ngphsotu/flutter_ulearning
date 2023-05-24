@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,8 +11,9 @@ class SignUpController {
 
   const SignUpController({required this.context});
 
-  // * Handle Email SignUp
+  // * Handle Email SignUp in SignUp Controller
   Future<void> handleEmailSignUp() async {
+    final navigator = Navigator.of(context);
     final state = context.read<SignUpBloc>().state;
 
     String username = state.username;
@@ -63,7 +62,7 @@ class SignUpController {
         toastInfo(
             msg:
                 'An email has been sent to your registered email. To active it, please check your email box and click on the link');
-        Navigator.of(context).pop();
+        navigator.pop();
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

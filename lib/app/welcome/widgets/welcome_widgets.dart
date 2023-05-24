@@ -11,7 +11,7 @@ import '/common/common.dart';
 
 PageController pageController = PageController(initialPage: 0);
 
-// * Build Welcome Page Widget
+// * Build Welcome Page Widget in Welcome Page
 Widget buildWelcomePage(
   int index,
   BuildContext context,
@@ -90,7 +90,7 @@ Widget buildWelcomePage(
   );
 }
 
-// * Build Dots Welcome Page
+// * Build Dots in Welcome Page
 Widget buildDots(WelcomeState state) {
   return DotsIndicator(
     position: state.page,

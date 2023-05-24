@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common.dart';
 
-// * Reusable Search
+// * Build Reusable Search
 class ReusableSearch extends StatefulWidget {
   final int? maxLine;
   final bool autocorrect;

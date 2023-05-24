@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,8 +12,9 @@ class SignInController {
 
   const SignInController({required this.context});
 
-  // * Handle Email SignIn
+  // * Handle Email SignIn in SignIn Controller
   Future<void> handleEmailSignIn(String type) async {
+    final navigator = Navigator.of(context);
     try {
       if (type == 'email') {
         // BlocProvider.of<SigninBloc>(context).state
@@ -66,9 +65,9 @@ class SignInController {
             }
             Global.storageService
                 .setString(AppConstants.STORAGE_USER_TOKEN_KEY, '12345678');
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil('/applicationPage', (route) => false);
-            // * Verified user from firebase
+            navigator.pushNamedAndRemoveUntil(
+                '/applicationPage', (route) => false);
+            // Verified user from firebase
           } else {
             if (kDebugMode) {
               print(
@@ -76,7 +75,7 @@ class SignInController {
             }
             toastInfo(msg: 'Currently you\'re not a user of this app');
             return;
-            // * Error gettting user from firebase
+            // Error gettting user from firebase
           }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'user-not-found') {

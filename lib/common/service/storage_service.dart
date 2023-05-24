@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '/common/common.dart';
+import '../common.dart';
 
 class StorageService {
   late final SharedPreferences preferences;

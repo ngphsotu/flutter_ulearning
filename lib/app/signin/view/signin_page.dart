@@ -24,7 +24,7 @@ class _SignInPageState extends State<SignInPage> {
           child: SafeArea(
             child: Scaffold(
               backgroundColor: AppColors.primaryBackground,
-              appBar: buildSignInUpAppBar('Log In'),
+              appBar: buildAppBar('Log In'),
               body: SingleChildScrollView(
                 child: formSignIn(context),
               ),

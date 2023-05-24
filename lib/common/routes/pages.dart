@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '/global.dart';
-import '/common/common.dart';
+import '../common.dart';
 import '/app/home/home.dart';
 import '/app/signup/signup.dart';
 import '/app/signin/signin.dart';

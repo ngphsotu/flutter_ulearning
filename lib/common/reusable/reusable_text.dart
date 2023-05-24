@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../value/value.dart';
+import '../common.dart';
 
-// * Reusable Text
+// * Build Reusable Text
 class ReusableText extends StatefulWidget {
   final int? maxLines;
   final bool? softWrap;

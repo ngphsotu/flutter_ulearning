@@ -6,15 +6,15 @@ import '/common/common.dart';
 
 // * SIGNIN PAGE WIDGETS
 
-// * Build Appbar Widget
-AppBar buildSignInUpAppBar(String type) {
+// * Build Appbar Widget in SignIn Page
+AppBar buildAppBar(String type) {
   return AppBar(
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(1),
       child: Container(
         color: AppColors.primarySecondaryBackground,
         height: 1,
-        // height defines he thickness of the line
+        // height defines the thickness of the line
       ),
     ),
     title: Text(
@@ -28,7 +28,7 @@ AppBar buildSignInUpAppBar(String type) {
   );
 }
 
-// * Build Third Party Login Widget
+// * Build Third Party Login Widget in SignIn Page
 // Need context for accessing bloc
 Widget buildThirdPartyLogin(BuildContext context) {
   return Container(
@@ -57,7 +57,7 @@ Widget buildThirdPartyLogin(BuildContext context) {
   );
 }
 
-// * Reusable Icon
+// * Build Reusable Icon in SignIn Page
 Widget _reusableIcons(Function() onTap, String iconName) {
   return GestureDetector(
     onTap: onTap,
@@ -69,7 +69,7 @@ Widget _reusableIcons(Function() onTap, String iconName) {
   );
 }
 
-// * Text - Forgot Password
+// * Build Text - Forgot Password in SignIn Page
 Widget forgotPassword() {
   return TextButton(
     onPressed: () {
@@ -87,30 +87,3 @@ Widget forgotPassword() {
     ),
   );
 }
-
-// Build Login & Register Button
-// Widget buildLogInAndRegButton(String buttonName) {
-//   return GestureDetector(
-//     onTap: () {},
-//     child: Center(
-//       child: Container(
-//         width: 325.w,
-//         height: 50.h,
-//         margin: EdgeInsets.only(left: 25.w, right: 25.w, top: 40.h),
-//         decoration: BoxDecoration(
-//           color: Colors.blue,
-//           borderRadius: BorderRadius.circular(15.w),
-//           boxShadow: [
-//             BoxShadow(
-//               color: Colors.grey.withOpacity(.1),
-//               offset: const Offset(0, 1),
-//               blurRadius: 2,
-//               spreadRadius: 1,
-//             ),
-//           ],
-//         ),
-//         child: Center(child: Text(buttonName)),
-//       ),
-//     ),
-//   );
-// }

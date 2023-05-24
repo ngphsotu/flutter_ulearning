@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/common/common.dart';
-import '../../home/home.dart';
+import '/app/home/home.dart';
+import '/app/profile/profile.dart';
 
 // * APPLICATION PAGE WIDGETS
 
-// * Build Application Page Widget
+// * Build Application Page Widget in Application Page
 Widget buildApplicationPage(int index) {
   List<Widget> widget = [
-    // const Center(child: Text('Home')),
     const HomePage(),
     const Center(child: Text('Search')),
     const Center(child: Text('Course')),
     const Center(child: Text('Chat')),
-    const Center(child: Text('Profile')),
+    const ProfilePage(),
   ];
 
   return widget[index];
 }
 
-// * Bottom Tabs
+// * Build Bottom Tabs in Application Page
 var bottomTabs = [
   BottomNavigationBarItem(
     label: 'home',

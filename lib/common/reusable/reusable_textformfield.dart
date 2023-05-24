@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common.dart';
 
-// * Reusable Text Form Field
+// * Build Reusable Text Form Field
 class ReusableTextFormField extends StatefulWidget {
   final int? maxLine;
   final bool obscureText;
