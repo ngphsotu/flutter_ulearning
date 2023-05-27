@@ -68,8 +68,10 @@ Column formSignUp(BuildContext context) {
             ),
             SizedBox(height: 25.h),
             const ReusableText(
-                text:
-                    'By creating an account you have to agree with out them & condication.'),
+              text:
+                  'By creating an account you have to agree with out them & condication.',
+              maxLines: 2,
+            ),
             Container(
               width: 325.w,
               height: 40.h,
