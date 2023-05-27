@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common.dart';
 
@@ -20,9 +21,9 @@ class ReusableText extends StatefulWidget {
   const ReusableText({
     super.key,
     required this.text,
-    this.color = AppColors.primarySecondaryElementText,
+    this.color = AppColors.primaryText,
     this.maxLines = 1,
-    this.fontSize,
+    this.fontSize = 16,
     this.overflow,
     this.softWrap,
     this.fontStyle,
@@ -48,7 +49,8 @@ class _ReusableTextState extends State<ReusableText> {
       textAlign: widget.textAlign,
       style: TextStyle(
         color: widget.color,
-        fontSize: widget.fontSize,
+        fontSize: widget.fontSize!.sp,
+        fontStyle: widget.fontStyle,
         fontFamily: widget.fontFamily,
         fontWeight: widget.fontWeight,
         decoration: widget.decoration,

@@ -27,10 +27,13 @@ class _HomePageState extends State<HomePage> {
               // crossAxisAlignment: CrossAxisAlignment.start,
               slivers: [
                 SliverToBoxAdapter(
-                    child: buildHomePageText('Hello,',
-                        color: AppColors.primaryThirdElementText)),
-                SliverToBoxAdapter(child: buildHomePageText('Tung', top: 5)),
-                SliverPadding(padding: EdgeInsets.only(top: 20.h)),
+                    child: Row(
+                  children: [
+                    buildHomePageText('Hello, ',
+                        color: AppColors.primaryThirdElementText),
+                    buildHomePageText('Tung'),
+                  ],
+                )),
                 SliverToBoxAdapter(child: buildSearchView()),
                 SliverToBoxAdapter(child: buildSlidersView(context, state)),
                 SliverToBoxAdapter(child: buildMenuView()),

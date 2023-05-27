@@ -70,6 +70,7 @@ Column formSignUp(BuildContext context) {
             const ReusableText(
               text:
                   'By creating an account you have to agree with out them & condication.',
+              fontSize: 13,
               maxLines: 2,
             ),
             Container(

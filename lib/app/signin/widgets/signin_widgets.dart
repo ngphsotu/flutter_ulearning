@@ -71,17 +71,17 @@ Widget _reusableIcons(Function() onTap, String iconName) {
 
 // * Build Text - Forgot Password in SignIn Page
 Widget forgotPassword() {
-  return TextButton(
-    onPressed: () {
+  return GestureDetector(
+    onTap: () {
       if (kDebugMode) {
-        print('Press Forgot password Text');
+        print('Tap Forgot password Text');
       }
     },
     child: ReusableText(
       text: 'Forgot password ?',
-      color: AppColors.primaryText,
+      color: AppColors.primarySecondaryElementText,
+      fontSize: 12.sp,
       fontStyle: FontStyle.italic,
-      fontSize: 14.sp,
       decoration: TextDecoration.underline,
       decorationColor: AppColors.primarySecondaryElementText,
     ),

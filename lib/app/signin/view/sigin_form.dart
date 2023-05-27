@@ -15,7 +15,8 @@ Column formSignIn(BuildContext context) {
       Center(
           child: ReusableText(
         text: 'Or use your email account to login',
-        fontSize: 14.sp,
+        fontSize: 12.sp,
+        color: AppColors.primarySecondaryElementText,
       )),
       Container(
         margin: EdgeInsets.only(top: 100.h),

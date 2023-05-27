@@ -54,47 +54,50 @@ Widget buildHomePageText(String text,
 }
 
 // * Build Search View Widget in Home Page
-Widget buildSearchView() {
-  return Row(
-    children: [
-      SizedBox(
-        width: 280.w,
-        height: 40.h,
-        child: const ReusableSearch(
-          hintText: 'Search your course',
-          labelText: 'Search',
-          prefixIcon: Icon(Icons.search, color: Colors.black),
-          autocorrect: false,
-          keyboardType: TextInputType.multiline,
-        ),
-      ),
-      GestureDetector(
-        onTap: () {
-          if (kDebugMode) {
-            print('Tap Settings Search Icon');
-          }
-        },
-        child: Container(
-          width: 40.h,
+Widget buildSearchView({int top = 20}) {
+  return Container(
+    margin: EdgeInsets.only(top: top.h),
+    child: Row(
+      children: [
+        SizedBox(
+          width: 280.w,
           height: 40.h,
-          decoration: BoxDecoration(
-            color: AppColors.primaryElement,
-            border: Border.all(color: AppColors.primaryElement),
-            borderRadius: BorderRadius.all(Radius.circular(13.w)),
+          child: const ReusableSearch(
+            hintText: 'Search your course',
+            labelText: 'Search',
+            prefixIcon: Icon(Icons.search, color: Colors.black),
+            autocorrect: false,
+            keyboardType: TextInputType.multiline,
           ),
-          child: Image.asset('assets/icons/options.png'),
         ),
-      ),
-    ],
+        GestureDetector(
+          onTap: () {
+            if (kDebugMode) {
+              print('Tap Settings Search Icon');
+            }
+          },
+          child: Container(
+            width: 40.h,
+            height: 40.h,
+            decoration: BoxDecoration(
+              color: AppColors.primaryElement,
+              border: Border.all(color: AppColors.primaryElement),
+              borderRadius: BorderRadius.all(Radius.circular(13.w)),
+            ),
+            child: Image.asset('assets/icons/options.png'),
+          ),
+        ),
+      ],
+    ),
   );
 }
 
 // * Build Sliders View Widget in Home Page
-Widget buildSlidersView(context, state) {
+Widget buildSlidersView(context, state, {int top = 20}) {
   return Column(
     children: [
       Container(
-        margin: EdgeInsets.only(top: 20.h),
+        margin: EdgeInsets.only(top: top.h),
         width: 325.w,
         height: 160.h,
         child: PageView(
@@ -159,17 +162,21 @@ Widget buildMenuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableText('Choose your course'),
+            const ReusableText(
+              text: 'Choose your course',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
             GestureDetector(
               onTap: () {
                 if (kDebugMode) {
                   print('Tap See All Text');
                 }
               },
-              child: _reusableText(
-                'See All',
+              child: ReusableText(
+                text: 'See All',
                 color: AppColors.primaryThirdElementText,
-                fontSize: 12,
+                fontSize: 12.sp,
               ),
             ),
           ],
@@ -218,19 +225,6 @@ Widget buildMenuView() {
   );
 }
 
-// * Build Reusable Text Widget in Home Page
-Widget _reusableText(String text,
-    {int fontSize = 16,
-    Color color = AppColors.primaryText,
-    FontWeight fontWeight = FontWeight.bold}) {
-  return ReusableText(
-    text: text,
-    color: color,
-    fontSize: fontSize.sp,
-    fontWeight: fontWeight,
-  );
-}
-
 // * Build Menu Text Widget in Home Page
 Widget _menuText(String menuText,
     {Color textColor = AppColors.primaryElementText,
@@ -243,8 +237,8 @@ Widget _menuText(String menuText,
       border: Border.all(color: backGroundColor),
       borderRadius: BorderRadius.circular(7.w),
     ),
-    child: _reusableText(
-      menuText,
+    child: ReusableText(
+      text: menuText,
       color: textColor,
       fontWeight: FontWeight.normal,
       fontSize: 12,

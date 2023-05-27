@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ulearning/app/application/application.dart';
 
 import '/global.dart';
 import '../settings.dart';
@@ -37,6 +38,9 @@ class _SettingsPageState extends State<SettingsPage> {
 
   void _removeUserData() {
     final navigator = Navigator.of(context);
+    context
+        .read<ApplicationBloc>()
+        .add(const TriggerApplicationEvent(index: 0));
     Global.storageService.remove(AppConstants.STORAGE_USER_TOKEN_KEY);
     navigator.pushNamedAndRemoveUntil('/signInPage', (route) => false);
     if (kDebugMode) {
