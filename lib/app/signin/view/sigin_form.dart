@@ -7,6 +7,7 @@ import '../signin.dart';
 import '/common/common.dart';
 
 Column formSignIn(BuildContext context) {
+  final navigator = Navigator.of(context);
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -54,12 +55,10 @@ Column formSignIn(BuildContext context) {
                 buttonName: 'Login',
                 backgroundColor: AppColors.primaryElement,
                 onPressed: () {
+                  SignInController(context: context).handleEmailSignIn('email');
                   if (kDebugMode) {
                     print('Press Login Button');
                   }
-                  SignInController(context: context).handleEmailSignIn('email');
-                  // Navigator.of(context)
-                  //     .pushNamedAndRemoveUntil('/homePage', (route) => false);
                 },
               ),
             ),
@@ -84,7 +83,7 @@ Column formSignIn(BuildContext context) {
                   if (kDebugMode) {
                     print('Press Signup Button');
                   }
-                  Navigator.of(context).pushNamed('/signUp');
+                  navigator.pushNamed('/signUpPage');
                   // SignUpController(context: context).handleEmailSignUp();
                   // Navigator.of(context).pushNamedAndRemoveUntil(
                   //     'signUp', (route) => false);

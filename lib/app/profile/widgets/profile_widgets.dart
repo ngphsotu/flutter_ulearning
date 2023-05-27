@@ -68,12 +68,15 @@ var imagesInfo = <String, String>{
   'Reminders': 'cube.png',
 };
 
-Widget buildListView() {
+// * Build List View in Profile Page
+Widget buildListView(context) {
+  final navigator = Navigator.of(context);
   return Column(
     children: [
       ...List.generate(
         imagesInfo.length,
         (index) => GestureDetector(
+          onTap: () => navigator.pushNamed('/settingsPage'),
           child: Container(
             margin: EdgeInsets.only(bottom: 15.h),
             child: Row(

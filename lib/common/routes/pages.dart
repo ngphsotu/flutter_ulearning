@@ -9,6 +9,7 @@ import '/app/signup/signup.dart';
 import '/app/signin/signin.dart';
 import '/app/welcome/welcome.dart';
 import '/app/application/application.dart';
+import '/app/profile/settings/settings.dart';
 
 class AppPages {
   static List<PageEntity> routes() {
@@ -37,6 +38,11 @@ class AppPages {
         route: AppRoutes.HOME,
         page: const HomePage(),
         bloc: BlocProvider(create: (_) => HomeBloc()),
+      ),
+      PageEntity(
+        route: AppRoutes.SETTINGS,
+        page: const SettingsPage(),
+        bloc: BlocProvider(create: (_) => SettingsBloc()),
       ),
     ];
   }

@@ -20,6 +20,7 @@ Widget buildWelcomePage(
   String imagePath,
   String buttonName,
 ) {
+  final navigator = Navigator.of(context);
   return Column(
     children: [
       SizedBox(
@@ -80,8 +81,8 @@ Widget buildWelcomePage(
                 print(
                     'The value is ${Global.storageService.getDeviceFirstOpen()}');
               }
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil('/signIn', (route) => false);
+              navigator.pushNamedAndRemoveUntil(
+                  '/signInPage', (route) => false);
             }
           },
         ),

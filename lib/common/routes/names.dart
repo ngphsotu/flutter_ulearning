@@ -6,9 +6,11 @@ class AppRoutes {
   // Application page
   static const APPLICATION = '/applicationPage';
   // Sign in page
-  static const SIGNIN = '/signIn';
+  static const SIGNIN = '/signInPage';
   // Sign up page
-  static const SIGNUP = '/signUp';
+  static const SIGNUP = '/signUpPage';
   // Home page
   static const HOME = '/homePage';
+  // Settings page in profile
+  static const SETTINGS = '/settingsPage';
 }
